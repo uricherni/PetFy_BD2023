@@ -8,7 +8,10 @@ interface IUser {
     createdAt: Date
     modifiedAt: Date
     email: string
-    location: string
+    address?: string
+    neighborhood?: string
+    city: string
+    province: string
     phoneNumber: string
     password: string
     status: boolean
@@ -22,7 +25,10 @@ const userSchema = new Schema<IUser>({
     email: {type: String},
     password: {type: String},
     phoneNumber: {type: String, required: false},
-    location: {type: String, required: false},
+    address: {type: String, required: false},
+    neighborhood: {type: String, required: false},
+    city: {type: String},
+    province: {type: String},
     birthDate: {type: Date},
     status: {type: Boolean, default: true},
     createdAt: {type: Date, default: new Date()},
